@@ -1,0 +1,30 @@
+ALGORITHME Analyse_Phrase
+VAR
+    c : CARACTERE;
+    longueur : ENTIER := 0;
+    mots : ENTIER := 1;
+    voyelles : ENTIER := 0;
+DEBUT
+    Lire(c);
+
+    TANT_QUE (c <> '.') FAIRE
+        longueur := longueur + 1;
+
+        SI (c = ' ') ALORS
+            mots := mots + 1;
+        FIN_SI
+
+        SI (c = 'a' OU c = 'e' OU c = 'i' OU c = 'o' OU c = 'u' OU c = 'y' OU
+            c = 'A' OU c = 'E' OU c = 'I' OU c = 'O' OU c = 'U' OU c = 'Y') ALORS
+            voyelles := voyelles + 1;
+        FIN_SI
+
+        Lire(c);
+    FIN_TANT_QUE
+
+    longueur := longueur + 1;
+
+    Ecrire("La longueur de la phrase est : ", longueur);
+    Ecrire("Le nombre de mots est : ", mots);
+    Ecrire("Le nombre de voyelles est : ", voyelles);
+FIN
